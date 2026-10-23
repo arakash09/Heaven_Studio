@@ -2256,6 +2256,17 @@ const { useState, useEffect, useRef, useMemo, useCallback } = React;
               <span className="hidden text-[0.68rem] font-semibold tracking-[0.14em] sm:inline">WHATSAPP</span>
             </a>
 
+            {/* Bottom-Left Email Quick Button */} 
+            <a 
+              href={`mailto:${STUDIO.email}`} 
+              className="heaven-glow fixed bottom-20 left-5 z-[450] flex items-center gap-2.5 rounded-full bg-gradient-to-r from-[#8a6a33] via-[#e8cc92] to-[#8a6a33] px-4 py-3 text-ink shadow-[0_10px_30px_rgba(201,160,90,0.5)] transition hover:brightness-110" 
+             aria-label="Email Heaven Studio" 
+            > 
+              <span className="text-lg" 
+              aria-hidden="true">✉</span> 
+              <span className="text-[0.68rem] font-semibold tracking-[0.14em]">EMAIL</span> 
+            </a>
+
             {/* Bottom-Right Heaven AI Launcher */}
             <button
               onClick={() => setAiOpen((o) => !o)}
