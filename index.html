@@ -1,1 +1,110 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#08090b" />
+    <title>Heaven Studio — Architecture · Structure · Interior · Engineering · Visualization</title>
+    <meta
+      name="description"
+      content="Heaven Studio (হেভেন স্টুডিও) — Dhaka based architecture & engineering studio founded by Architect Atikur Rahman (Akash). Architectural design, structural, electrical, plumbing, fire safety, 3D visualization, interior & landscape, RAJUK approval support, soil test and construction supervision."
+    />
+    <meta property="og:title" content="Heaven Studio | হেভেন স্টুডিও" />
+    <meta
+      property="og:description"
+      content="Architecture · Structure · Interior · Engineering · Visualization — Dhaka, Bangladesh"
+    />
+    <meta property="og:type" content="website" />
+    <link
+      rel="icon"
+      href="logo.jpg"
+      onerror="this.href='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Crect width=\'100\' height=\'100\' fill=\'%23fff\'/%3E%3Crect x=\'18\' y=\'18\' width=\'64\' height=\'64\' fill=\'%23000\'/%3E%3Cpath d=\'M18 18 L50 82 M48 82 A34 34 0 0 1 82 52\' stroke=\'%23fff\' stroke-width=\'8\' fill=\'none\'/%3E%3C/svg%3E'"
+    />
 
+    <!-- ===================================================================
+         SECTION 1: GOOGLE FONTS & TAILWIND CONFIGURATION
+    =================================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Sora:wght@200;300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: "#08090b",
+              ink2: "#0d0f13",
+              graphite: "#14171d",
+              smoke: "#1e222a",
+              ash: "#8b8f98",
+              paper: "#f4f0e8",
+              brass: "#c9a05a",
+              brasslite: "#e8cc92",
+              live: "#56d68b",
+              sky: "#7fb2ff",
+            },
+            fontFamily: {
+              display: ['"Cormorant Garamond"', "ui-serif", "Georgia", "serif"],
+              sans: ['"Sora"', "ui-sans-serif", "system-ui", "sans-serif"],
+              bn: ['"Hind Siliguri"', '"Sora"', "sans-serif"],
+              mono: ['"IBM Plex Mono"', "ui-monospace", "monospace"],
+            },
+            animation: {
+              float: "float 7s ease-in-out infinite",
+              "pulse-ring": "pulseRing 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+              marquee: "marquee 38s linear infinite",
+              shimmer: "shimmer 6s linear infinite",
+              "logo-pulse": "logoPulse 2.2s ease-in-out infinite",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-10px)" },
+              },
+              pulseRing: {
+                "0%": { transform: "scale(0.85)", opacity: "0.85" },
+                "70%, 100%": { transform: "scale(1.9)", opacity: "0" },
+              },
+              marquee: {
+                from: { transform: "translateX(0)" },
+                to: { transform: "translateX(-50%)" },
+              },
+              shimmer: {
+                "0%": { backgroundPosition: "-220% 0" },
+                "100%": { backgroundPosition: "220% 0" },
+              },
+              logoPulse: {
+                "0%, 100%": {
+                  transform: "scale(1)",
+                  filter: "drop-shadow(0 0 18px rgba(201,160,90,0.25))",
+                },
+                "50%": {
+                  transform: "scale(1.06)",
+                  filter: "drop-shadow(0 0 32px rgba(232,204,146,0.55))",
+                },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- ===================================================================
+         SECTION 2: CUSTOM CSS STYLES (EASILY CUSTOMIZABLE)
+    =================================================================== -->
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- React 18 + Babel for Zero-Build GitHub Pages Compatibility -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel" src="script.js"></script>
+  </body>
+</html>

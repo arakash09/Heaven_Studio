@@ -1,0 +1,99 @@
+
+      body {
+        background-color: #08090b;
+        color: #f4f0e8;
+        font-family: "Sora", sans-serif;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+      ::selection {
+        background: #c9a05a;
+        color: #08090b;
+      }
+      /* Custom Architectural Scrollbar */
+      ::-webkit-scrollbar {
+        width: 9px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #08090b;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(#3a3f4a, #1c2027);
+        border-radius: 99px;
+        border: 2px solid #08090b;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #c9a05a;
+      }
+      /* Typography Helpers */
+      .bn {
+        font-family: "Hind Siliguri", "Sora", sans-serif;
+      }
+      .label {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.68rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+      }
+      .gold-text {
+        background: linear-gradient(
+          100deg,
+          #8a6a33 0%,
+          #e8cc92 32%,
+          #fff6e2 50%,
+          #e8cc92 68%,
+          #8a6a33 100%
+        );
+        background-size: 220% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: shimmer 6s linear infinite;
+      }
+      /* Blueprint Grid Overlay */
+      .grid-lines {
+        background-image:
+          linear-gradient(to right, rgba(244, 240, 232, 0.055) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(244, 240, 232, 0.055) 1px, transparent 1px);
+        background-size: 64px 64px;
+      }
+      /* Form Input Styling */
+      .input-field {
+        width: 100%;
+        border-radius: 0.75rem;
+        border: 1px solid rgba(244, 240, 232, 0.14);
+        background: rgba(244, 240, 232, 0.04);
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+        color: #f4f0e8;
+        outline: none;
+        transition: border-color 0.25s, box-shadow 0.25s;
+      }
+      .input-field::placeholder {
+        color: rgba(244, 240, 232, 0.3);
+      }
+      .input-field:focus {
+        border-color: rgba(201, 160, 90, 0.7);
+        box-shadow: 0 0 0 3px rgba(201, 160, 90, 0.12);
+      }
+      section {
+        scroll-margin-top: 84px;
+      }
+    
+
+/* Heaven Studio refinements */
+#home { isolation:isolate; }
+#hero3d { position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none; opacity:1; transition:opacity .35s ease; }
+#hero3d canvas { display:block; width:100%; height:100%; }
+.hero-3d-vignette { position:absolute; inset:0; z-index:1; pointer-events:none; background:radial-gradient(ellipse at 68% 40%,rgba(201,160,90,.11),transparent 48%),linear-gradient(180deg,rgba(8,9,11,.10),rgba(8,9,11,.12) 55%,#08090b 100%); }
+#home > .hero-content-layer { position:relative; z-index:2; }
+/* gentle breathing glow for key actions */
+@keyframes heavenBreathe { 0%,100% { box-shadow:0 8px 24px rgba(201,160,90,.26),0 0 0 0 rgba(232,204,146,.18); } 50% { box-shadow:0 10px 34px rgba(201,160,90,.48),0 0 0 7px rgba(232,204,146,0); } }
+@keyframes whatsappBreathe { 0%,100% { box-shadow:0 8px 26px rgba(37,211,102,.35),0 0 0 0 rgba(37,211,102,.20); } 50% { box-shadow:0 10px 34px rgba(37,211,102,.55),0 0 0 8px rgba(37,211,102,0); } }
+.heaven-glow { animation:heavenBreathe 2.8s ease-in-out infinite; position:relative; isolation:isolate; }
+.heaven-glow::after { content:""; position:absolute; inset:-3px; border-radius:inherit; border:1px solid rgba(232,204,146,.45); opacity:0; animation:heavenHalo 2.8s ease-out infinite; pointer-events:none; }
+@keyframes heavenHalo { 0% { transform:scale(.98); opacity:.55; } 100% { transform:scale(1.13); opacity:0; } }
+.whatsapp-glow { animation:whatsappBreathe 2.5s ease-in-out infinite; }
+.heaven-glow:hover,.whatsapp-glow:hover { animation-play-state:paused; transform:translateY(-2px); }
+.brand-lockup { transform:scale(1.08); transform-origin:left center; }
+@media (prefers-reduced-motion:reduce) { .heaven-glow,.whatsapp-glow,.heaven-glow::after { animation:none !important; } #hero3d { transition:none; } }
